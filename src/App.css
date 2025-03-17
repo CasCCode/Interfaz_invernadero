@@ -40,3 +40,9 @@
 .read-the-docs {
   color: #888;
 }
+
+.card-img-fixed {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}

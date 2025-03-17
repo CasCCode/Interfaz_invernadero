@@ -1,11 +1,14 @@
+import { Card } from "react-bootstrap";
+
 function GreenhouseCard({ name, crop, status, image }) {
     return (
-      <div className="card">
-        <img src={image} alt={name} />
+      <Card className="text-center shadow">
+
+        <Card.Img src={image} alt={name} className="card-img-fixed"/>
         <h3>{name}</h3>
-        <p>Cultivo: {crop}</p>
-        <p>Estado: {status}</p>
-      </div>
+        <strong>Cultivo: {crop}</strong> <br />
+        <strong>Estado: {status}</strong>
+      </Card>
     );
   }
   
