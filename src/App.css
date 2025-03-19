@@ -40,3 +40,16 @@
 .read-the-docs {
   color: #888;
 }
+
+.card-img-fixed {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.btn-invisible-border {
+  background-color: white;
+  border: 2px solid white;
+  border-color: rgba(255, 255, 255, 0.1); /* Hace el borde casi invisible */
+  color: black; /* Ajusta el color del texto si es necesario */
+}
