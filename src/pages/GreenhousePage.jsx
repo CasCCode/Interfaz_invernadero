@@ -12,7 +12,7 @@ function GreenhousePage() {
       <p>Estado: {greenhouse.status}</p>
       <div className="options">
         <Link to="#">Distribución de Siembra</Link>
-        <Link to="#">Niveles de los Tanques</Link>
+        <Link to={`/greenhouse/${id}/tanques`}>Niveles de los Tanques</Link>
         <Link to="#">Mediciones</Link>
       </div>
     </div>
