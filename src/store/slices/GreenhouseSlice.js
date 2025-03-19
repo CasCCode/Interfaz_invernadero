@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import pimentonImg from '../../assets/pimenton.jpg'; // Ajuste en la ruta
-import tomateImg from '../../assets/tomates.jpg'; // Ajuste en la ruta
+import pimentonImg from '../../assets/pimenton.jpg'; 
+import tomateImg from '../../assets/tomates.jpg'; 
 
 const initialState = {
   greenhouses: [
