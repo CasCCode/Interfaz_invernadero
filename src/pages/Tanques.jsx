@@ -1,43 +1,28 @@
 import { useParams } from 'react-router-dom';
 import './Tanques.css'; // Importa el CSS
+import BackButton from '../components/BackButton';
 
 function Tanques() {
     const { id } = useParams();
-
     const tanks = [
         { id: 1, name: 'Agua', percentage: 75, color: '#00aaff' },
         { id: 2, name: 'Zinc', percentage: 50, color: '#888888' },
         { id: 3, name: 'Magnesio', percentage: 30, color: '#bb33ff' },
         { id: 4, name: 'Boro', percentage: 90, color: '#ffcc00' },
     ];
-
-    // Botón para volver atrás
-    const handleBack = () => {
-        window.history.back();
-    };
-
     return (
         <div className="tanques-container">
-            {/* Botón fijo para volver a la página anterior */}
-            <button className="back-button" onClick={handleBack}>⬅ Volver</button>
-
+            <BackButton />
             <h2 className="titulo">Niveles de los Tanques - Invernadero {id}</h2>
-
             <div className="tanques-grid">
                 {tanks.map((tank) => (
                     <div key={tank.id} className="tank">
-                        {/* Nombre del tanque */}
                         <div className="tank-title">
                             <span className="tank-icon">★</span>
                             {tank.name}
                         </div>
-
-                        {/* Porcentaje con fuente pixelada */}
                         <div className="percentage-below">{tank.percentage}%</div>
-
-                        {/* Contenedor del tanque (vaso) */}
                         <div className="tank-body">
-                            {/* Nivel del líquido */}
                             <div
                                 className="liquid"
                                 style={{
@@ -45,7 +30,6 @@ function Tanques() {
                                     backgroundColor: tank.color,
                                 }}
                             >
-                                {/* Tres olas animadas para mayor fluidez */}
                                 <div className="wave wave1" />
                                 <div className="wave wave2" />
                                 <div className="wave wave3" />
@@ -54,9 +38,6 @@ function Tanques() {
                     </div>
                 ))}
             </div>
-
-
-            {/* Onda verde al final de la página (SVG) */}
             <div className="bottom-wave-container">
                 <svg
                     className="bottom-wave"
