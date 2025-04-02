@@ -43,7 +43,7 @@ function GreenhousePage() {
       </div>
       <div className="options row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {[
-          { img: distribucionImg, text: 'Distribución de Siembra', to: '#' },
+          { img: distribucionImg, text: 'Novedades', to: `/greenhouse/${id}/distribucion` },
           { img: nivelesImg, text: 'Niveles de los Tanques', to: `/greenhouse/${id}/tanques` },
           { img: medicionesImg, text: 'Mediciones', to: '#' }
         ].map((item, index) => (

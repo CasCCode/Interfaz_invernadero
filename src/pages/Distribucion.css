@@ -1,0 +1,66 @@
+.distribucion.container {
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.encabezado {
+    background: linear-gradient(160deg, #0a0a0a 0%, #1f5a1f 100%);
+    padding: 100px 20px 50px;
+    position: relative;
+}
+
+.detalles-encabezado {
+    max-width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.distribucion-img {
+    width: 50%;
+    height: 20%; 
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.titulos {
+    color:aliceblue;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    max-width: 1200px;
+    margin: 60px 0 40px;
+    text-transform: uppercase;
+    padding: 0 15px;
+}
+
+.titulos::after {
+    content: "";
+    display: block;
+    width: 220px;
+    height: 4px;
+    background: #2d882d;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.option {
+    background: white !important;
+    border: none !important;
+    border-radius: 15px !important;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
