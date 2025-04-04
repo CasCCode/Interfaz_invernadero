@@ -45,7 +45,7 @@ function GreenhousePage() {
         {[
           { img: distribucionImg, text: 'Novedades', to: `/greenhouse/${id}/distribucion` },
           { img: nivelesImg, text: 'Niveles de los Tanques', to: `/greenhouse/${id}/tanques` },
-          { img: medicionesImg, text: 'Mediciones', to: '#' }
+          { img: medicionesImg, text: 'Mediciones', to: `/greenhouse/${id}/mediciones` }
         ].map((item, index) => (
           <div key={index} className="col">
             <Link to={item.to} className="option">
