@@ -1,17 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-/* ---------------------------------------
-   CONTENEDOR GENERAL
---------------------------------------- */
 .tanques-container {
     position: relative;
-    /* Para posicionar la ola inferior */
     min-height: 100vh;
-    /* Ocupa toda la pantalla */
     padding: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-x: hidden;
-    /* Evita scroll horizontal si algo se sale */
 }
 
 .titulo {
@@ -20,21 +14,14 @@
     margin-bottom: 20px;
 }
 
-/* ---------------------------------------
-   GRID DE TANQUES
---------------------------------------- */
 .tanques-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
     justify-items: center;
     margin-bottom: 300px;
-    /* Espacio grande para que se vea la ola */
 }
 
-/* ---------------------------------------
-   TARJETA DE CADA TANQUE
---------------------------------------- */
 .tank {
     text-align: center;
 }
@@ -61,18 +48,13 @@
     color: #333;
 }
 
-/* Porcentaje con fuente pixelada */
 .percentage-below {
     font-family: 'Press Start 2P', monospace;
-    /* Fuente pixelada */
     font-size: 1rem;
     color: #333;
     margin-bottom: 10px;
 }
 
-/* ---------------------------------------
-   CUERPO DEL TANQUE (VASO)
---------------------------------------- */
 .tank-body {
     position: relative;
     width: 160px;
@@ -80,36 +62,26 @@
     border: 2px solid #333;
     border-radius: 15px;
     overflow: hidden;
-    /* Evita que las olas se salgan lateralmente */
     background: #f5f5f5;
 }
 
-/* ---------------------------------------
-   LÍQUIDO
---------------------------------------- */
 .liquid {
     position: absolute;
     bottom: 0;
     width: 100%;
     overflow: visible;
-    /* Para que la ola se dibuje por arriba (top:-20px) */
     border-radius: 0 0 15px 15px;
     transition: height 0.4s ease;
 }
 
-/* ---------------------------------------
-   OLAS
---------------------------------------- */
 .wave {
     position: absolute;
     top: -20px;
-    /* sobresale 20px por encima del líquido */
     left: 0;
     width: 200%;
     height: 60px;
     pointer-events: none;
     background-color: inherit;
-    /* Mismo color del líquido */
     -webkit-mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nNTAwJyBoZWlnaHQ9JzUwJyB2aWV3Qm94PScwIDAgNTAwIDUwJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxwYXRoIGZpbGw9JyMwMDAwMDAnIGQ9J00wIDMwIEM1MCAxMCAxMDAgMzAgMTUwIDMwIEMyMDAgMzAgMjUwIDMwIDI5OS45IDMwIEMzMDAgMzAgMzUwIDMwIDQwMCAzMCBDNDUwIDMwIDQ5OS45IDMwIDUwMCAzMCBWMzAgNTAwIDUwIEwwIDUwIFonIC8+PC9zdmc+');
     -webkit-mask-size: contain;
     -webkit-mask-repeat: repeat-x;
@@ -118,23 +90,19 @@
     mask-repeat: repeat-x;
 }
 
-/* OLA 1: Más lenta */
 .wave1 {
     animation: waveMove1 3s linear infinite;
     opacity: 1;
 }
 
-/* OLA 2: Un poco más rápida */
 .wave2 {
     animation: waveMove2 2s linear infinite;
     opacity: 1;
 }
 
-/* OLA 3: Empieza desplazada y se mueve distinto */
 .wave3 {
     top: -20px;
     left: -50%;
-    /* empieza más a la izquierda */
     width: 200%;
     height: 60px;
     pointer-events: none;
@@ -149,7 +117,6 @@
     animation: waveMove3 2.5s linear infinite;
 }
 
-/* Animaciones */
 @keyframes waveMove1 {
     0% {
         transform: translate(0, 0);
@@ -216,9 +183,6 @@
     }
 }
 
-/* ---------------------------------------
-   BOTÓN VOLVER
---------------------------------------- */
 .back-button {
     position: fixed;
     top: 20px;
@@ -240,18 +204,12 @@
     background-color: rgba(34, 139, 34, 1);
 }
 
-
-
-/* ---------------------------------------
-   OLA INFERIOR (SVG)
---------------------------------------- */
 .bottom-wave-container {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     z-index: 0;
-    /* Debajo de las hojas */
 }
 
 .bottom-wave {

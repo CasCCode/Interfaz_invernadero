@@ -1,0 +1,50 @@
+.greenhouse-card {
+    border: none !important;
+    border-radius: 15px !important;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.greenhouse-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.card-image {
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    flex-shrink: 0;
+}
+
+.card-body-custom {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #f8f9fa;
+}
+
+.card-title {
+    color: #2d882d !important;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.card-badge-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.card-badge {
+    font-size: 0.9rem !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 20px !important;
+}
