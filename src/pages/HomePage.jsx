@@ -49,10 +49,11 @@ function HomePage() {
       <p>Seleccione un invernadero para administrarlo.</p>
       
       {greenhouses.map((gh, index) => (
-        <Link key={index} to={`/greenhouse/${gh.id}`}>
-          <GreenhouseCard {...gh} /> <br />
+        <Link key={gh.id} to={`/greenhouse/${gh.id}`}>              {/* /greenhouse/gh.id se vería algo cómo greenhouse/1, greenhouse/2, ... */}
+          <GreenhouseCard {...gh} /> <br />                         {/** Se usa el ...gh para pasar todas las props */}
         </Link>
       ))}
+      
     </div>
   );
 }
