@@ -6,6 +6,7 @@ import distribucionImg from '../assets/distribucion.jpg';
 import nivelesImg from '../assets/niveles.jpg';
 import medicionesImg from '../assets/mediciones.jpg';
 import BackButton from '../components/BackButton';
+import { Helmet } from 'react-helmet';
 
 function GreenhousePage() {
   const { id } = useParams();
@@ -15,6 +16,9 @@ function GreenhousePage() {
 
   return (
     <div className="greenhouse-container">
+      <Helmet>
+        <title>Invernadero | GrowSphere</title>
+      </Helmet>
       <BackButton />     
       <div className="header-card">
         <img 

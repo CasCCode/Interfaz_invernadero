@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 import './Mediciones.css';
 import BackButton from '../components/BackButton';
+import { Helmet } from 'react-helmet';
 
 function Mediciones() {
     const { id } = useParams();
@@ -15,6 +16,9 @@ function Mediciones() {
 
     return (
         <div className="mediciones-container">
+            <Helmet>
+                <title>Mediciones | GrowSphere</title>
+            </Helmet>
             <BackButton />
             <h2 className="titulo">Mediciones de Tanques - Invernadero {id}</h2>
             

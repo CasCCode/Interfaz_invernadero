@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import './Tanques.css'; // Importa el CSS
 import BackButton from '../components/BackButton';
+import { Helmet } from 'react-helmet';
 
 function Tanques() {
     const { id } = useParams();
@@ -12,6 +13,9 @@ function Tanques() {
     ];
     return (
         <div className="tanques-container">
+            <Helmet>
+                <title>Tanques | GrowSphere</title>
+            </Helmet>
             <BackButton />
             <h2 className="titulo">Niveles de los Tanques - Invernadero {id}</h2>
             <div className="tanques-grid">

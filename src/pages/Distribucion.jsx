@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import distribucionImg from '../assets/distribucion.jpg';
 import BackButton from '../components/BackButton';
 import './Distribucion.css';
+import { Helmet } from 'react-helmet';
 
 function DistribucionPage() {
     const { id } = useParams();
@@ -19,8 +20,10 @@ function DistribucionPage() {
 
     return(
         <div className="distribucion-container">
+            <Helmet>
+                <title>Novedades | GrowSphere</title>
+            </Helmet>
             <BackButton/>
-            
             <div className="encabezado">
                <div className="detalles-encabezado">
                     <h2 className="titulos">Novedades del invernadero {greenhouse.name}</h2>
