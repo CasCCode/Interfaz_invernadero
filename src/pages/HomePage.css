@@ -62,7 +62,6 @@
   }
 }
 
-/* Botón de configuración: sin fondo ni contorno */
 .config-button {
   position: fixed;
   top: 20px;
@@ -76,11 +75,10 @@
   z-index: 999;
 }
 
-/* Panel de configuración deslizante */
 .config-panel {
   position: fixed;
   top: 0;
-  right: -260px; /* Inicia fuera de la vista */
+  right: -260px; 
   width: 250px;
   height: 100%;
   background-color: white;
@@ -89,15 +87,16 @@
   transition: right 0.3s ease;
   z-index: 1000;
 }
+
 .config-panel.active {
   right: 0;
 }
+
 .config-panel h3 {
   margin-top: 0;
   color: #2d882d;
 }
 
-/* Estilos para el ícono de cierre */
 .close-panel-icon {
   position: absolute;
   top: 10px;
@@ -108,13 +107,10 @@
   user-select: none;
 }
 
-/* Opcional: estados hover o focus */
-.close-panel-icon:hover,
 .close-panel-icon:focus {
   color: #2d882d;
 }
 
-/* Botón para cerrar sesión */
 .logout-button {
   width: 100%;
   padding: 10px;
@@ -124,4 +120,166 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.custom-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  min-width: 200px;
+  text-align: center;
+  border-radius: 4px;
+  margin: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logout-button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+  color: #fff;
+}
+
+.change-profile-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}
+
+.change-profile-button:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+/* --- Slider Horizontal de Invernaderos --- */
+.horizontal-scroll-container {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Contenedor que envuelve el slider y los botones en fila */
+.slider-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.horizontal-content {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0 20px;
+  justify-content: flex-start;
+}
+
+.horizontal-content .item {
+  flex: 0 0 auto;
+  width: 300px;
+}
+
+/* Botones de desplazamiento: ahora se muestran a los lados, en la fila */
+.scroll-button {
+  background-color: #2d882d;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Botón Agregar Invernadero: reposicionado debajo del slider, con el mismo ancho que las cards */
+.add-greenhouse-button-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.add-greenhouse-button-container .add-greenhouse-btn {
+  display: inline-block;
+  width: 300px;
+  text-decoration: none;
+  color: #2d882d;
+  border: 2px dashed #2d882d;
+  border-radius: 8px;
+  padding: 20px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.add-greenhouse-button-container .add-greenhouse-btn:hover {
+  background-color: rgba(45, 136, 45, 0.05);
+}
+
+.plus-circle {
+  display: block;
+  margin: 0 auto 10px auto;
+  width: 80px;
+  height: 80px;
+  background-color: #2d882d;
+  color: white;
+  font-size: 50px;
+  line-height: 80px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.add-greenhouse-text {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Estilos de la scrollbar para WebKit */
+.horizontal-content::-webkit-scrollbar {
+  height: 8px;
+}
+
+.horizontal-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+/* Adaptabilidad para móviles */
+@media (max-width: 768px) {
+  .welcome-title {
+    font-size: 1.8rem !important;
+  }
+  
+  .selection-text {
+    font-size: 1.5rem !important;
+  }
+  
+  .horizontal-scroll-container {
+    max-width: 100%;
+  }
+  
+  .horizontal-content {
+    padding: 0 20px;
+  }
+  
+  .horizontal-content .item {
+    width: 250px;
+  }
+  
+  .scroll-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+  
+  .add-greenhouse-button-container .add-greenhouse-btn {
+    width: 250px;
+  }
 }

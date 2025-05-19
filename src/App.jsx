@@ -8,6 +8,7 @@ import Mediciones from './pages/Mediciones';
 import ProtectedRoute from './components/ProtectedRoute';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import AddGreenhouse from './pages/AddGreenhouse';
 import { AuthProvider } from './context/AuthContext';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path="/greenhouse/:id/tanques" element={<Tanques />} />
             <Route path="/greenhouse/:id/distribucion" element={<Distribucion />} />
             <Route path="/greenhouse/:id/mediciones" element={<Mediciones />}/>
+            <Route path="/add-greenhouse" element={<AddGreenhouse />} />
           </Route>
         </Routes>
       </AuthProvider>

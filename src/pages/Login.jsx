@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
 import { useAuth } from '../context/AuthContext';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { Helmet } from 'react-helmet';
 import './Login.css';
 
 function Login() {
@@ -47,6 +48,9 @@ function Login() {
 
   return (
     <div className="login-container">
+      <Helmet>
+        <title>Login | GrowSphere</title>
+      </Helmet>
       <form onSubmit={handleLogin}>
         <h2>Iniciar Sesión</h2>
         

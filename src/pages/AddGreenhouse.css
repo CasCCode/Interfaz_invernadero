@@ -1,0 +1,153 @@
+.add-greenhouse-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Animación de fade-in */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.add-greenhouse-container h1 {
+  text-align: center;
+  color: #2d882d;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.error-message {
+  color: #d9534f;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2d882d;
+  box-shadow: 0 0 5px rgba(45, 136, 45, 0.5);
+}
+
+button[type="submit"] {
+  padding: 12px;
+  background-color: #2d882d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #256a25;
+}
+
+/* Preview de imagen dentro del formulario */
+.image-preview {
+  margin-top: 10px;
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Sección de consejos */
+.tips-container {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #e9f9e9;
+  border: 1px solid #d4edda;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.tips-container h2 {
+  margin-bottom: 10px;
+  color: #2d882d;
+  font-size: 1.2rem;
+}
+
+/* Resumen en tiempo real */
+.preview-container {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f0f8ff;
+  border: 1px solid #d4edda;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.preview-container h2 {
+  margin-bottom: 10px;
+  color: #2d882d;
+  font-size: 1.2rem;
+}
+
+.preview-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.preview-image {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* Adaptabilidad para móviles */
+@media (max-width: 600px) {
+  .add-greenhouse-container {
+    padding: 10px;
+  }
+}

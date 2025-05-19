@@ -1,17 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
+/* Eliminamos el fondo y el pseudo-elemento decorativo */
 .tanques-container {
     position: relative;
     min-height: 100vh;
     padding: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-x: hidden;
+    background: none; /* Sin fondo */
+}
+
+body {
+    background: none;
+}
+
+.tanques-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background-image: url('https://via.placeholder.com/1440x150/ccffcc/ffffff?text=Decorativo');
+    background-size: cover;
+    opacity: 0.2;
+    z-index: 1;
 }
 
 .titulo {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 20px;
+    color: #2d882d;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .tanques-grid {
@@ -19,11 +38,19 @@
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
     justify-items: center;
-    margin-bottom: 300px;
+    margin-bottom: 50px;
 }
 
 .tank {
     text-align: center;
+    background: transparent !important;
+    border-radius: 15px;
+    box-shadow: none !important;
+    transition: transform 0.2s;
+}
+
+.tank:hover {
+    transform: scale(1.02);
 }
 
 .tank-title {
@@ -118,69 +145,27 @@
 }
 
 @keyframes waveMove1 {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    25% {
-        transform: translate(-25%, 5px);
-    }
-
-    50% {
-        transform: translate(-50%, 0);
-    }
-
-    75% {
-        transform: translate(-75%, -5px);
-    }
-
-    100% {
-        transform: translate(-100%, 0);
-    }
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-25%, 5px); }
+    50% { transform: translate(-50%, 0); }
+    75% { transform: translate(-75%, -5px); }
+    100% { transform: translate(-100%, 0); }
 }
 
 @keyframes waveMove2 {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    25% {
-        transform: translate(-25%, -5px);
-    }
-
-    50% {
-        transform: translate(-50%, 0);
-    }
-
-    75% {
-        transform: translate(-75%, 5px);
-    }
-
-    100% {
-        transform: translate(-100%, 0);
-    }
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-25%, -5px); }
+    50% { transform: translate(-50%, 0); }
+    75% { transform: translate(-75%, 5px); }
+    100% { transform: translate(-100%, 0); }
 }
 
 @keyframes waveMove3 {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    25% {
-        transform: translate(25%, -4px);
-    }
-
-    50% {
-        transform: translate(50%, 4px);
-    }
-
-    75% {
-        transform: translate(75%, -2px);
-    }
-
-    100% {
-        transform: translate(100%, 0);
-    }
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(25%, -4px); }
+    50% { transform: translate(50%, 4px); }
+    75% { transform: translate(75%, -2px); }
+    100% { transform: translate(100%, 0); }
 }
 
 .back-button {
@@ -198,22 +183,83 @@
     transition: transform 0.2s, background-color 0.3s;
     z-index: 9999;
 }
-
 .back-button:hover {
     transform: scale(1.1);
     background-color: rgba(34, 139, 34, 1);
 }
 
-.bottom-wave-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 0;
+/* Botones: unificamos el estilo de shape con border-radius reducido */
+.btn-green, 
+.btn-cancel {
+    border-radius: 5px; /* ambos se verán iguales (cuadrados o con leve redondeo) */
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, background-color 0.3s;
+    cursor: pointer;
 }
 
-.bottom-wave {
-    display: block;
-    width: 100%;
-    height: auto;
+.btn-green {
+    background-color: #2d882d;
+    color: white;
+}
+.btn-green:hover {
+    transform: scale(1.05);
+    background-color: #1f5a1f;
+}
+
+.btn-cancel {
+    background-color: #dc3545;
+    color: white;
+}
+.btn-cancel:hover {
+    background-color: #c82333;
+}
+
+/* Estilos para el formulario */
+.fill-form {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+.fill-form label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+.fill-form input {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Contenedor para centrar el formulario */
+.fill-form-container {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Agrupar botones del formulario */
+.btn-group {
+    margin-top: 10px;
+}
+
+/* Estilos para el mensaje de error unificado */
+.error-msg {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
 }

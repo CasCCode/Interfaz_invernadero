@@ -61,11 +61,6 @@
   z-index: 2;
 }
 
-.info-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
 .options-title {
   text-align: center;
   margin: 60px 0 40px; 

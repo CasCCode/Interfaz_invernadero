@@ -4,6 +4,7 @@ import { auth, db } from '../firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useAuth } from '../context/AuthContext';
+import { Helmet } from 'react-helmet';
 import './Register.css';
 
 function Register() {
@@ -81,6 +82,9 @@ function Register() {
 
   return (
     <div className="register-container">
+      <Helmet>
+        <title>Register | GrowSphere</title>
+      </Helmet>
       <form onSubmit={handleRegister}>
         <h2>Crear Cuenta</h2>
         

@@ -23,6 +23,14 @@
     font-size: 1.1rem;
 }
 
+/* Título nuevo para distribución */
+.distribucion-title {
+    text-align: center;
+    color: #2d882d;
+    font-size: 1.8rem;
+    margin: 20px 0 10px;
+}
+
 .contenido-principal {
     max-width: 1200px;
     margin: 0 auto;
@@ -38,8 +46,9 @@
 }
 
 .seccion-imagen h3 {
-    color: #2d882d;
-    margin-bottom: 20px;
+  text-align: center;
+  color: #2d882d;
+  margin-bottom: 20px;
 }
 
 .distribucion-img {
@@ -65,11 +74,13 @@
     color: #555;
 }
 
+/* Sección de novedades (Resumen del estado) */
 .seccion-novedades {
     background: white;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
 }
 
 .seccion-novedades h3 {
@@ -93,9 +104,21 @@
     border-left: 4px solid;
 }
 
-.novedad-item.plaga { border-color: #ff4444; }
-.novedad-item.crecimiento { border-color: #00c851; }
-.novedad-item.riego { border-color: #33b5e5; }
+.novedad-item.plaga { 
+    border-color: #ff4444; 
+}
+.novedad-item.riego { 
+    border-color: #33b5e5; 
+}
+.novedad-item.default {
+    border-color: #aaa;
+}
+
+.novedad-item.alerta-tanque {
+    background: #f8d7da;
+    border-color: #a94442;
+    color: #a94442;
+}
 
 .novedad-icono {
     font-size: 1.5rem;
@@ -106,13 +129,12 @@
     flex: 1;
 }
 
-.novedad-fecha {
-    display: block;
-    font-size: 0.8rem;
-    color: #666;
-    margin-bottom: 5px;
+.novedad-contenido p {
+    margin: 0;
+    font-size: 1rem;
 }
 
+/* Estilos responsivos */
 @media (max-width: 768px) {
     .encabezado {
         padding: 30px 15px;

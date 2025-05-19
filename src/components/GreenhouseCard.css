@@ -1,50 +1,49 @@
 .greenhouse-card {
-    border: none !important;
-    border-radius: 15px !important;
+    margin: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
     overflow: hidden;
-    transition: all 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.greenhouse-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-}
-
-.card-image {
+  }
+  
+  .card-image {
     height: 200px;
     object-fit: cover;
-    object-position: center;
-    flex-shrink: 0;
-}
-
-.card-body-custom {
-    padding: 1.5rem;
-    flex-grow: 1;
+  }
+  
+  .card-body-custom {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #2d882d;  /* Título en verde */
+  }
+  
+  .card-badge-container {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: #f8f9fa;
-}
-
-.card-title {
-    color: #2d882d !important;
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-.card-badge-container {
-    display: flex;
-    justify-content: space-around;
+    justify-content: center;
     gap: 10px;
-}
-
-.card-badge {
-    font-size: 0.9rem !important;
-    padding: 0.5rem 1rem !important;
-    border-radius: 20px !important;
-}
+  }
+  
+  .card-badge {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+  
+  .greenhouse-card {
+    margin: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .greenhouse-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+    
