@@ -154,7 +154,6 @@
   color: #fff;
 }
 
-/* --- Slider Horizontal de Invernaderos --- */
 .horizontal-scroll-container {
   position: relative;
   overflow: hidden;
@@ -163,7 +162,6 @@
   margin: 0 auto;
 }
 
-/* Contenedor que envuelve el slider y los botones en fila */
 .slider-wrapper {
   display: flex;
   align-items: center;
@@ -185,7 +183,6 @@
   width: 300px;
 }
 
-/* Botones de desplazamiento: ahora se muestran a los lados, en la fila */
 .scroll-button {
   background-color: #2d882d;
   border: none;
@@ -200,7 +197,6 @@
   flex-shrink: 0;
 }
 
-/* Botón Agregar Invernadero: reposicionado debajo del slider, con el mismo ancho que las cards */
 .add-greenhouse-button-container {
   margin: 20px 0;
   text-align: center;
@@ -241,7 +237,6 @@
   margin: 0;
 }
 
-/* Estilos de la scrollbar para WebKit */
 .horizontal-content::-webkit-scrollbar {
   height: 8px;
 }
@@ -251,7 +246,6 @@
   border-radius: 4px;
 }
 
-/* Adaptabilidad para móviles */
 @media (max-width: 768px) {
   .welcome-title {
     font-size: 1.8rem !important;

@@ -3,10 +3,8 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { auth, db } from '../firebase';
 import { doc, onSnapshot } from 'firebase/firestore';
 
-// Creamos el contexto
 const AuthContext = createContext();
 
-// Exportamos el proveedor
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -51,7 +49,7 @@ export function AuthProvider({ children }) {
   );
 }
 
-// Creamos y exportamos el hook para acceder al contexto
+// Crea y exporta el hook para acceder al contexto
 export function useAuth() {
   return useContext(AuthContext);
 }

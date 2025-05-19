@@ -38,7 +38,7 @@ function GreenhousePage() {
   if (loading) return <h2>Cargando...</h2>;
   if (!greenhouse) return <h2>Invernadero no encontrado</h2>;
 
-  // --- CÁLCULO DEL ESTADO DEL INVERNADERO ---
+  // Calculo del estado del invernadero
   const ahora = new Date();
   let lastRiegoDate;
   if (greenhouse.creationDate && typeof greenhouse.creationDate.toDate === 'function') {
@@ -49,7 +49,7 @@ function GreenhousePage() {
   const diffMs = ahora - lastRiegoDate;
   const diffDays = diffMs / (1000 * 60 * 60 * 24);
 
-  // Extraer el número de días recomendados del string "Cada X-Y días"
+  // Extraer el número de días recomendados del string 
   const recommendedMatch = greenhouse.cropInfo.recommendedFrequency
     ? greenhouse.cropInfo.recommendedFrequency.match(/\d+/)
     : null;
@@ -57,13 +57,13 @@ function GreenhousePage() {
 
   // Definir estado basado en el riego
   let estado = "Sin definir";
-  let estadoColor = "#333"; // Color neutral por defecto
+  let estadoColor = "#333"; 
   if (diffDays <= recommendedDays) {
-    estado = "Estable"; // Dentro del tiempo de riego recomendado
-    estadoColor = "#2d882d"; // Verde
+    estado = "Estable"; 
+    estadoColor = "#2d882d"; 
   } else {
-    estado = "⚠️ Riego atrasado: revisar novedades"; // Se ha excedido el tiempo recomendado
-    estadoColor = "#dc3545"; // Rojo
+    estado = "⚠️ Riego atrasado: revisar novedades"; 
+    estadoColor = "#dc3545";
   }
 
   return (
@@ -74,7 +74,7 @@ function GreenhousePage() {
       <BackButton />
       <div className="header-card">
         <img 
-          src={greenhouse.imageUrl}  // Usamos imageUrl para la imagen
+          src={greenhouse.imageUrl}  
           alt={greenhouse.name} 
           className="greenhouse-image"
         />

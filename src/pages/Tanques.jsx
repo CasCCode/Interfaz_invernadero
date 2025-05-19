@@ -7,10 +7,9 @@ import { Helmet } from 'react-helmet';
 import './Tanques.css';
 
 function Tanques() {
-  const { id } = useParams(); // id del invernadero
+  const { id } = useParams(); 
   const [greenhouse, setGreenhouse] = useState(null);
   const [loading, setLoading] = useState(true);
-
   // Estados para registrar llenado de tanques
   const [showFillForm, setShowFillForm] = useState(false);
   const [newFillLevel, setNewFillLevel] = useState("");
@@ -39,8 +38,6 @@ function Tanques() {
     return <p style={{ textAlign: 'center' }}>Cargando datos del invernadero...</p>;
   if (!greenhouse)
     return <p style={{ textAlign: 'center' }}>Invernadero no encontrado.</p>;
-
-  // --- CÁLCULO DEL NIVEL DE LOS TANQUES ---
   const ahora = new Date();
   let lastDate;
   if (greenhouse.creationDate && typeof greenhouse.creationDate.toDate === "function") {
@@ -69,15 +66,15 @@ function Tanques() {
   // Función para registrar el llenado de tanques.
   const handleFillSubmit = async (e) => {
     e.preventDefault();
-    setErrorMsg(""); // Limpiamos el mensaje de error
+    setErrorMsg(""); 
     if (newFillLevel === "" || isNaN(newFillLevel)) return;
 
-    // Verificamos que el nuevo nivel no supere el 100%
+    // Verifica que el nuevo nivel no supere el 100%
     if (Number(newFillLevel) > 100) {
       setErrorMsg('El nuevo nivel no puede ser mayor a 100%.');
       return;
     }
-    // Verificamos que el nuevo nivel no sea inferior al nivel actual de llenado.
+    // Acá se verifica que el nuevo nivel no sea inferior al nivel actual de llenado.
     if (Number(newFillLevel) < greenhouse.cropInfo.initialTankLevel) {
       setErrorMsg(`El nuevo nivel no puede ser inferior al nivel actual de llenado.`);
       return;
@@ -142,8 +139,6 @@ function Tanques() {
           </p>
         )}
       </div>
-
-      {/* Sección para registrar el llenado de tanques (centrado) */}
       <div className="fill-form-container">
         {showFillForm ? (
           <form onSubmit={handleFillSubmit} noValidate className="fill-form">

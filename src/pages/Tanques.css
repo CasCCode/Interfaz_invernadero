@@ -1,11 +1,10 @@
-/* Eliminamos el fondo y el pseudo-elemento decorativo */
 .tanques-container {
     position: relative;
     min-height: 100vh;
     padding: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-x: hidden;
-    background: none; /* Sin fondo */
+    background: none; 
 }
 
 body {
@@ -188,10 +187,9 @@ body {
     background-color: rgba(34, 139, 34, 1);
 }
 
-/* Botones: unificamos el estilo de shape con border-radius reducido */
 .btn-green, 
 .btn-cancel {
-    border-radius: 5px; /* ambos se verán iguales (cuadrados o con leve redondeo) */
+    border-radius: 5px; 
     padding: 10px 20px;
     font-size: 16px;
     margin: 5px;
@@ -218,17 +216,18 @@ body {
     background-color: #c82333;
 }
 
-/* Estilos para el formulario */
 .fill-form {
     display: inline-flex;
     align-items: center;
     gap: 10px;
     margin-top: 20px;
 }
+
 .fill-form label {
     font-weight: bold;
     margin-right: 5px;
 }
+
 .fill-form input {
     width: 60px;
     padding: 5px;
@@ -237,7 +236,6 @@ body {
     text-align: center;
 }
 
-/* Contenedor para centrar el formulario */
 .fill-form-container {
     position: relative;
     z-index: 10;
@@ -247,12 +245,10 @@ body {
     margin-top: 20px;
 }
 
-/* Agrupar botones del formulario */
 .btn-group {
     margin-top: 10px;
 }
 
-/* Estilos para el mensaje de error unificado */
 .error-msg {
     background-color: #f8d7da;
     color: #721c24;

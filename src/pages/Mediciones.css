@@ -90,8 +90,8 @@
 
 .decoracion-footer {
     background: #2d882d;
-    width: 100vw; /* Ocupa el ancho completo de la ventana */
-    margin-left: -50vw; /* Compensa el padding del contenedor padre */
+    width: 100vw; 
+    margin-left: -50vw; 
     left: 50%;
     position: relative;
     padding: 15px 0;

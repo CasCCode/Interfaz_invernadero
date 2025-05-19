@@ -112,15 +112,11 @@ function HomePage() {
       <Helmet>
         <title>Inicio | GrowSphere</title>
       </Helmet>
-
-      {/* Botón para abrir el panel de configuración */}
       {!showMenu && (
         <button className="config-button" onClick={() => setShowMenu(true)}>
           &#9881;
         </button>
       )}
-
-      {/* Panel de configuración lateral */}
       <div className={`config-panel ${showMenu ? "active" : ""}`}>
         <FaTimes
           className="close-panel-icon"
@@ -149,7 +145,6 @@ function HomePage() {
           Cerrar sesión
         </button>
       </div>
-
       <Container fluid className="p-0">
         <div className="welcome-section">
           <div className="header-content">
@@ -163,8 +158,6 @@ function HomePage() {
             <h1 className="welcome-title">¡Bienvenido {userName}!</h1>
           </div>
         </div>
-
-        {/* Slider Horizontal de Invernaderos */}
         <div className="horizontal-scroll-container">
           <div className="slider-wrapper">
             <button className="scroll-button left" onClick={scrollLeft}>
@@ -192,8 +185,6 @@ function HomePage() {
             </button>
           </div>
         </div>
-
-        {/* Botón Agregar Invernadero reposicionado debajo del slider */}
         <div className="add-greenhouse-button-container">
           <Link to="/add-greenhouse" className="add-greenhouse-btn">
             <div className="plus-circle">+</div>

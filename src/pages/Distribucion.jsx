@@ -20,7 +20,7 @@ function DistribucionPage() {
   const [localGreenhouse, setLocalGreenhouse] = useState(null);
   const greenhouse = reduxGreenhouse || localGreenhouse;
 
-  // Estado para saber si se registró el riego (para quitar la advertencia de plagas)
+  // Estado para saber si se registró el riego osea para quitar la advertencia de plagas
   // y para reiniciar el contador de días para el riego.
   const [riegoRealizado, setRiegoRealizado] = useState(false);
   // Este estado se usará para ignorar el contador de riego y reiniciarlo a la fecha actual.
@@ -45,7 +45,7 @@ function DistribucionPage() {
 
   if (!greenhouse) return <h2>Invernadero no encontrado</h2>;
 
-  // Se utiliza la fecha de creación (creationDate) para calcular cuánto han disminuido los niveles.
+  // Se utiliza la fecha de creación del invernadero para calcular cuánto han disminuido los niveles.
   const ahora = new Date();
   let lastRiegoDateForTanks;
   if (greenhouse.creationDate && typeof greenhouse.creationDate.toDate === 'function') {
@@ -63,15 +63,15 @@ function DistribucionPage() {
   const emoteTanque = "🛢️";
   const mensajeTanque = `Nivel de los tanques: ${Math.floor(currentTankLevel)}%.`;
 
-  // ---------------------- CÁLCULO DEL CONTADOR PARA EL RIEGO ----------------------
-  // Utilizamos lastRiegoOverride si existe; de lo contrario, se usa la fecha original.
+  // Este es el calculo del contador para el riego
+  // Se utiliza lastRiegoOverride si existe de lo contrario, se usa la fecha original.
   const riegoReferenceDate = lastRiegoOverride
     ? lastRiegoOverride
     : lastRiegoDateForTanks;
   const diffMsRiego = ahora - riegoReferenceDate;
   const diffDaysRiego = diffMsRiego / (1000 * 60 * 60 * 24);
 
-  // Extraer el primer número de recommendedFrequency (p.ej. "Cada 5-7 días" → 5)
+  // Extraer el primer número de recommendedFrequency osea si es "Cada 5-7 días" extrae 5
   const recommendedMatch = greenhouse.cropInfo.recommendedFrequency
     ? greenhouse.cropInfo.recommendedFrequency.match(/\d+/)
     : null;
@@ -80,7 +80,7 @@ function DistribucionPage() {
   // Cálculo de los días restantes para el próximo riego.
   const daysRemaining = Math.max(recommendedDays - diffDaysRiego, 0);
   
-  // Riego: si han transcurrido al menos recommendedDays desde el último registro,
+  // Aca si han transcurrido al menos recommendedDays desde el último registro,
   // se muestra que el riego es necesario.
   const riegoNecesario = diffDaysRiego >= recommendedDays;
   const emoteRiego = "💧";
@@ -96,22 +96,21 @@ function DistribucionPage() {
   }
 
   // Para plagas: si han pasado (recommendedDays + 2) días desde la fecha original (para plagas)
-  // se muestra la advertencia; esta parte sigue usando la fecha de creación.
+  // se muestra la advertencia en esta parte se usa la fecha de creación que pone el usuario.
   const excesoTiempo = diffDaysTanks >= (recommendedDays + 2);
   const emotePlagas = excesoTiempo ? "⚠️" : "🐛";
   const mensajePlagas = excesoTiempo
     ? "Advertencia: Se han detectado pulgas."
     : "No se ha detectado presencia de pulgas.";
 
-  // Función para registrar riego: reinicia el contador de riego (lastRiegoOverride)
-  // y marca el riego como registrado. Esto reinicia el contador de días para el riego,
-  // pero NO afecta el nivel de los tanques.
+  // Función para registrar riego este reinicia el contador de riego (lastRiegoOverride)
+  // y marca el riego como registrado. 
   const handleRegistrarRiego = () => {
     setLastRiegoOverride(new Date());
     setRiegoRealizado(true);
   };
 
-  // Arreglo de tanques (para esta página se mantiene igual, pudiendo usarse currentTankLevel)
+  // Arreglo de tanques para esta página se mantiene igual, pudiendo usarse currentTankLevel
   const tanks = [
     { id: 1, name: 'Agua', percentage: Math.floor(currentTankLevel), color: '#00aaff' },
     { id: 2, name: 'Zinc', percentage: Math.floor(currentTankLevel), color: '#888888' },
